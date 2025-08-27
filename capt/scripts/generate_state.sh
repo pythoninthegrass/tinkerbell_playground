@@ -143,6 +143,7 @@ function main() {
 	# if the sshKey is not set, generate a default one
 	ssh_key=$(yq eval '.os.sshKey' "$config_file")
 	if [[ -z $ssh_key ]]; then
+		mkdir -p "$output_dir"
 		rm -rf "$output_dir"/capt-ssh-key* >>"$output_dir"/error.log 2>&1
 		ssh-keygen -t ed25519 -f "$output_dir"/capt-ssh-key -N "" -C "capt-playground" >>"$output_dir"/error.log 2>&1
 		if [[ $? -ne 0 ]]; then

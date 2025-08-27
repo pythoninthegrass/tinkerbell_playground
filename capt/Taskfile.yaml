@@ -88,6 +88,8 @@ tasks:
       - .state
     cmds:
       - ./scripts/generate_state.sh config.yaml .state
+    status:
+      - if [[ -n "$(yq '.os.sshKey' {{.STATE_FILE_FQ_PATH}})" ]]; then true; else false; fi
 
   next-steps:
     silent: true
