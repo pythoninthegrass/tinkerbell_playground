@@ -7,8 +7,8 @@ counts:
   workers: 1
   spares: 1
 versions:
-  capt: v0.6.5
-  chart: v0.20.1
+  capt: v0.6.7
+  chart: v0.21.0
   kube: v1.31.3
   os: 20.04
   kubevip: 0.9.1
